@@ -39,12 +39,11 @@ class THT_PT_clnLooseAttributes(Panel):
         layout = self.layout
         box = layout.box()
         row = box.row(align=True)
-        
-        
+        row.scale_y = 1.5
         row.operator('object.loosevert',text="Vertices",icon='SNAP_VERTEX')
-        row = box.row(align=True)
+        
         row.operator('object.looseedge',text="Edge",icon='EDGESEL')
-        row = box.row(align=True)
+        
         row.operator('object.looseface',text="Face",icon='FACESEL')
 
 class THT_PT_clnMesh(Panel):
@@ -64,12 +63,12 @@ class THT_PT_clnMesh(Panel):
         layout = self.layout
         box = layout.box()
         row = box.row(align=True)
-        
+        row.scale_y = 1.5
         
         row.operator('object.ngon',text="N-Gon",icon='UV_FACESEL')
-        row = box.row(align=True)
+       
         row.operator('object.nmanifold',text="Non-Manifold",icon='OBJECT_DATAMODE')
-        row = box.row(align=True)
+        
         row.operator('object.removeunusedmat',text="Remove Unused Mat",icon='MATERIAL_DATA')
 
         

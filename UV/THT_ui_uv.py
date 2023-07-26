@@ -42,9 +42,11 @@ class THT_PT_Rename_UV(Panel):
         layout = self.layout
         box = layout.box()
         row = box.row(align=True)
-
+        col = layout.column(align=True)
+        row.scale_y = 1.5
         
-        op = row.operator('uv.rename',text="Rename UV",icon ='UV')
+        row.operator('uv.rename',text="Rename UV",icon ='UV')
+        
         
         
        

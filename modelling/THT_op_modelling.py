@@ -47,7 +47,7 @@ class THT_OP_MDL_settemppivot(Operator):
 
     bl_label = "settemppivot"
     bl_idname = "object.temppivot"
-    bl_description = "Set Temp Pivot"
+    bl_description = "(WIP) Set Temp Pivot"
     
 
     def execute(self,context):   
@@ -72,8 +72,6 @@ class THT_OP_MDL_settemppivot(Operator):
           
           
 
-
-     
 
          
      

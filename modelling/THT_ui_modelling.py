@@ -61,10 +61,11 @@ class THT_PT_mdlPivotToSelected(Panel):
         layout = self.layout
         box = layout.box()
         row = box.row(align=True)
-
+        row.scale_y = 1.5
+        
         
         row.operator('object.pivottoselected',text="Pivot To Selected",icon='CUBE')
-        row = box.row(align=True)
+        
         row.operator('object.temppivot',text="Temp Pivot",icon='CUBE')
 
 
