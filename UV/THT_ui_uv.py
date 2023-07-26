@@ -5,6 +5,11 @@ from bpy_types import Panel
 
 
 
+
+
+
+    
+
 class THT_PT_uvMain(Panel):
 
     bl_label = "UV-Unwrap"
@@ -35,10 +40,13 @@ class THT_PT_Rename_UV(Panel):
     def draw(self,context):
 
         layout = self.layout
-        row = layout.row(align=True)
+        box = layout.box()
+        row = box.row(align=True)
+
+        
+        op = row.operator('uv.rename',text="Rename UV",icon ='UV')
         
         
-        row.operator('uv.start',text="Unwrap",icon='UV')
        
 
 
@@ -58,10 +66,13 @@ def register():
     for pnl in uvpanels:
         bpy.utils.register_class(pnl)
 
+        
 def unregister():
     
      for pnl in uvpanels:
         bpy.utils.unregister_class(pnl)
 
+
+         
 
 

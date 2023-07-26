@@ -43,6 +43,46 @@ class THT_OP_MDL_pivottoselected(Operator):
 
         return {'FINISHED'}
     
+class THT_OP_MDL_settemppivot(Operator):
+
+    bl_label = "settemppivot"
+    bl_idname = "object.temppivot"
+    bl_description = "Set Temp Pivot"
+    
+
+    def execute(self,context):   
+     
+     s_obj = bpy.context.selected_objects
+     bpy.ops.object.convert(target='MESH', keep_original=True)
+     bpy.ops.view3d.snap_cursor_to_active()
+     bpy.ops.object.empty_add(type='PLAIN_AXES', radius=5, align='WORLD', location=(0, 0, 0), scale=(5, 5, 5))
+     empty_obj = bpy.context.active_object
+     bpy.ops.view3d.snap_selected_to_cursor(use_offset=False)
+     
+     
+
+     for obj in s_obj:
+         
+         obj.parent = empty_obj
+         
+     
+         
+        
+        
+          
+          
+
+
+     
+
+         
+     
+     
+
+     return{'FINISHED'}
+        
+    
+    
 class THT_OP_MDL_converttoinstance(Operator):
 
     bl_label = "ConvertToInstance"
@@ -68,7 +108,7 @@ class THT_OP_MDL_alternatedgering(Operator):
     offset_bool : bpy.props.BoolProperty(name ="Offset",default=False)
 
     
-
+    
     def execute(self,context):   
         
         o = self.offset_bool
@@ -101,6 +141,7 @@ mdl_operator = [THT_OP_MDL_mycube,
                 THT_OP_MDL_pivottoselected,
                 THT_OP_MDL_converttoinstance,
                 THT_OP_MDL_alternatedgering,
+                THT_OP_MDL_settemppivot,
                 ]
 
 def register():

@@ -1,6 +1,5 @@
 import bpy
 from bpy_types import Panel
-from bpy.props import BoolProperty
 
 
 

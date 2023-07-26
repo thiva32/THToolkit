@@ -27,16 +27,24 @@ bl_info = {
 from . import THT_ui_panel
 from .modelling import THT_op_modelling
 from .cleanup import THT_op_cleanup
+from .UV import THT_op_uv
+
+
 
 def register():
+    
     THT_ui_panel.register()
     THT_op_modelling.register()
     THT_op_cleanup.register()
+    THT_op_uv.register()
 
 def unregister():
+
     THT_ui_panel.unregister()
     THT_op_modelling.unregister()
     THT_op_cleanup.unregister()
+    THT_op_uv.unregister()
+
 
 if __name__=='__main__':
     register()

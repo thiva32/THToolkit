@@ -64,6 +64,11 @@ class THT_PT_mdlPivotToSelected(Panel):
 
         
         row.operator('object.pivottoselected',text="Pivot To Selected",icon='CUBE')
+        row = box.row(align=True)
+        row.operator('object.temppivot',text="Temp Pivot",icon='CUBE')
+
+
+
 
 class THT_PT_mdlEdgeTools(Panel):
 
